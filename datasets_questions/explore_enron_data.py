@@ -50,3 +50,22 @@ else:
 	s = p3+" got "+str(enron_data[p3]["total_payments"])
 print s
 
+#counters will the number of people in our data for their default value
+sal = len(enron_data) #counter for people with quantified salary
+email = len(enron_data) #counter for people with a known email address
+for person in enron_data:
+	#for every person without a quantified salary or known email address, the respective counter will decrease by 1
+	if enron_data[person]["salary"] == "NaN":
+		sal = sal - 1
+	if enron_data[person]["email_address"] == "NaN":
+		email = email - 1
+print sal
+print email
+
+NaNpay = 0 #counter for people with an unknown total payment
+for person in enron_data:
+	if enron_data[person]["total_payments"] == "NaN":
+		NaNpay = NaNpay + 1
+print NaNpay
+print float(NaNpay)/float(len(enron_data))*100
+
