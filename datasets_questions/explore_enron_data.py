@@ -41,6 +41,7 @@ p1 = "SKILLING JEFFREY K"
 p2 = "LAY KENNETH L"
 p3 = "FASTOW ANDREW S"
 
+
 #the following constructs a string that contains the answer
 if enron_data[p1]["total_payments"] > enron_data[p2]["total_payments"] and enron_data[p1]["total_payments"] > enron_data[p3]["total_payments"]:
 	s = p1+'got'+str(enron_data[p1]["total_payments"])
@@ -68,4 +69,5 @@ for person in enron_data:
 		NaNpay = NaNpay + 1
 print NaNpay
 print float(NaNpay)/float(len(enron_data))*100
+
 
